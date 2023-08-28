@@ -11,12 +11,15 @@ import { Textarea } from './ui/textarea/textarea';
 import { Input } from './ui/input/input';
 import { Postcard } from './ui/postcard/postcard';
 import { ShortPostcard } from './ui/postcard/short-postcard';
+import { Header } from './features/header/header';
 
 
 function App() {
-  const onClick = () => console.log('click')
-  return (    
+  const onClick = () => console.log('click');
+  return (      
     <div>
+      <Header />
+    
       <Postcard 
         id='1' 
         image='https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg'
