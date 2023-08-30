@@ -63,7 +63,7 @@ const Burger = styled.div`
   width: 2rem;
   height: 0.25rem;
   border-radius: 10px;
-  background-color: black;
+  background-color: #4755a2;
   transform-origin: 1px;
   transition: all 0.3s linear;
 `;
