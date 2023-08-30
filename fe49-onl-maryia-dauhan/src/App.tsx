@@ -39,8 +39,6 @@ function App() {
         title='My title lorem ipsum  ipsum loremipsum  ipsum lorem ipsum  ipsum loremipsum  ipsum'
         author='Mary Jane'
       /> */}
-
-      {/* <Hamburger items={[{id:'1', title: 'title 1'}, {id:'2', title: 'title 2'}]} onClick={onClick} /> */}
       
       {/* <Button variant='primary' onClick={onClick}>Primary Button</Button> */}
 
@@ -49,11 +47,11 @@ function App() {
       {/* <Initials firstName='Maryia' secondName='dauhan'></Initials> */}
       {/* <Username firstName='Maryia' secondName='dauhan'></Username> */}
       
-      <Tabs>
+      {/* <Tabs>
         <Tab title="Lorem">Lorem ipsum</Tab>
         <Tab title="Hey">Hey mama</Tab>
         <Tab title="Cat">Cat has fur</Tab>
-      </Tabs>
+      </Tabs> */}
 
       {/* <Textarea labelText='Text'></Textarea>*/}
 

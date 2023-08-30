@@ -19,7 +19,8 @@ export const TabTitle: React.FC<Props> = ({ title, setSelectedTab, index, disabl
           setSelectedTab(index); 
           setActiveTab(activeTab => !activeTab);
         }} 
-        disabled={disabled}        
+        disabled={disabled}     
+        style={{ borderBottom: activeTab ? '3px solid dimgray' : '3px solid transparent'}}   
       >
         {title}
       </TabTitleButton>
@@ -38,7 +39,7 @@ const TabTitleButton = styled.button`
   font-weight: 500;
   line-height: 50px;
   padding: 0 20px;
-  border-bottom: 3px solid transparent;
+  // border-bottom: 3px solid {($color)};
 
   &:hover {
     color: blue;

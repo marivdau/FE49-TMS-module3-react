@@ -10,49 +10,31 @@ type Props = {
 };
 
 export const Hamburger: React.FC<Props> = ({ items, onClick }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [hamburgerOpen, setHamburgerOpen] = useState(false);
+
+  const toggleHamburger = () => {
+    setHamburgerOpen(!hamburgerOpen)
+  }
 
   return (  
-    <div>  
-      <BurgerButton type='button' onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? 'X' : '='}
-        {/* <BurgerLines className="line1"></BurgerLines>
-        <BurgerLines className="line2"></BurgerLines> */}
-      </BurgerButton>
-      <ListWrapper style={{display: isOpen ? 'block' : 'none'}}>
+    <div>      
+      <Humburger onClick={toggleHamburger}>
+        <Burger className="burger1" style={{transform: hamburgerOpen ? 'rotate(45deg)' : 'rotate(0)'}}></Burger>
+        <Burger className="burger2" style={{transform: hamburgerOpen ? 'rotate(-45deg)' : 'rotate(0)'}}></Burger>
+      </Humburger>
+     
+      <ListWrapper style={{display: hamburgerOpen ? 'block' : 'none'}}>
         {items.map(({id, title}) => <ListLineWrapper key={id}>{title}</ListLineWrapper>)}
       </ListWrapper>
     </div>
   )
 };
 
-const BurgerButton = styled.button`
-  all: unset;
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  z-index: 30;
-  width: 30px;
-  height: 30px;
-  border-radius: 5%;
-  cursor: pointer;
-  text-align: center;
-  line-height: 30px;
-
-  &:hover {
-    background-color: lightblue;
-  }
-
-  &:active {
-    background-color: lightblue;
-  }
-`
-
 const ListWrapper = styled.ul`
   all: unset;
   position: fixed;
-  top: 40px;
-  left: 10px;
+  top: 70px;
+  left: 20px;
   z-index: 30;
   width: 250px;
   height: 100px;
@@ -68,38 +50,20 @@ const ListLineWrapper = styled.li`
   background-color: lightblue;
 `;
 
-const BurgerLines = styled.span`
-  position: absolute;
-  width: 30px;
-  height: 3px;
+const Humburger = styled.div`
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: column nowrap;
+  z-index: 10;
+`;
+
+const Burger = styled.div`
+  width: 2rem;
+  height: 0.25rem;
+  border-radius: 10px;
   background-color: black;
-  transition: 0.4s;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  &::before {
-    position: absolute;
-    width: 30px;
-    height: 3px;
-    background-color: black;
-    transition: 0.4s;
-  }
-
-  &::after {
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    width: 30px;
-    height: 3px;
-    background-color: black;
-    transition: 0.4s;
-    content: '';
-    top: 12px;
-  }
-
-  & .line1 {
-    transform-origin: 0% 0%;
-    transition: transform 0.4s ease-in-out;
-  }
+  transform-origin: 1px;
+  transition: all 0.3s linear;
 `;
