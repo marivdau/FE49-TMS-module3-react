@@ -74,7 +74,7 @@ const ShortCardFirstLine = styled.div`
   flex-direction: column;  
   margin-right: 10px;
   justify-content: space-between;
-  width: 100%;
+  width: 80%;
 `;
 
 const ShortDateWrapper = styled.span`

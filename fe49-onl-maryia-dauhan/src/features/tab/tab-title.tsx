@@ -36,7 +36,7 @@ const TabTitleButton = styled.button`
     border-bottom: 3px solid dimgray;
   }
 
-  &:target {
+  &:hover {
     border-bottom: 3px solid dimgray;
   }
 

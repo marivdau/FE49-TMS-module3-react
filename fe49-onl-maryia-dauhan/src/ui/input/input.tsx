@@ -34,9 +34,9 @@ const InputWrapper = styled.input<{ $borderColor?: string }>`
   background-color: white;
   line-height: 30px;
   width: 100%;
-  padding: 10px;s
+  padding: 10px;
 
-  &:focus {
+  &:focus-visible {
     border: 3px solid ${({ $borderColor }) => $borderColor || 'gray'};
   }
 

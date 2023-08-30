@@ -20,7 +20,7 @@ function App() {
     <div>
       <Header />
     
-      <Postcard 
+      {/* <Postcard 
         id='1' 
         image='https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg'
         text='Lorem ipsum lorem ipsum  ipsum loremipsum  ipsum lorem ipsum ipsumlorem ipsum  ipsumlorem ipsum  ipsum lorem ipsumipsum lorem ipsum  ipsum lorem ipsum  ipsum lorem ipsum' 
@@ -38,7 +38,7 @@ function App() {
         lesson_num={4} 
         title='My title lorem ipsum  ipsum loremipsum  ipsum lorem ipsum  ipsum loremipsum  ipsum'
         author='Mary Jane'
-      />
+      /> */}
 
       {/* <Hamburger items={[{id:'1', title: 'title 1'}, {id:'2', title: 'title 2'}]} onClick={onClick} /> */}
       
@@ -49,11 +49,11 @@ function App() {
       {/* <Initials firstName='Maryia' secondName='dauhan'></Initials> */}
       {/* <Username firstName='Maryia' secondName='dauhan'></Username> */}
       
-      {/* <Tabs>
+      <Tabs>
         <Tab title="Lorem">Lorem ipsum</Tab>
         <Tab title="Hey">Hey mama</Tab>
         <Tab title="Cat">Cat has fur</Tab>
-      </Tabs> */}
+      </Tabs>
 
       {/* <Textarea labelText='Text'></Textarea>*/}
 

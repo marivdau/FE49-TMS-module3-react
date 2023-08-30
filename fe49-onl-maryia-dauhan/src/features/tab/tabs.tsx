@@ -18,7 +18,7 @@ export const Tabs: React.FC<Props> = ({ children }) => {
           title={item.props.title} 
           index={index} 
           setSelectedTab={setSelectedTab} 
-        />
+        ></TabTitle>
         )}
       </TabsWrapper>
       {children[selectedTab]}
