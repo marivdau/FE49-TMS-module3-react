@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 type Props = {
@@ -8,9 +9,20 @@ type Props = {
 }
 
 export const TabTitle: React.FC<Props> = ({ title, setSelectedTab, index, disabled }) => {
+  const [activeTab, setActiveTab] = useState(false);
+  
   return (
     <TabTitleWrapper>
-      <TabTitleButton onClick={() => setSelectedTab(index)} disabled={disabled}>{title}</TabTitleButton>
+      <TabTitleButton    
+        className={activeTab ? "active" : "inactive"}      
+        onClick={() => {
+          setSelectedTab(index); 
+          setActiveTab(activeTab => !activeTab);
+        }} 
+        disabled={disabled}        
+      >
+        {title}
+      </TabTitleButton>
     </TabTitleWrapper>
   )
 }
@@ -32,8 +44,12 @@ const TabTitleButton = styled.button`
     color: blue;
   }
 
-  &:active {
+  &.active {
     border-bottom: 3px solid dimgray;
+  }
+  
+  &.inactive {
+    border-bottom: 3px solid transparent;
   }
 
   &:hover {
