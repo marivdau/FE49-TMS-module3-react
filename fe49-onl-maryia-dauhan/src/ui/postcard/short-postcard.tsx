@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from "styled-components";
 
 type Props = {
@@ -20,6 +21,9 @@ export const ShortPostcard: React.FC<Props> = ({ id, image, text, date, lesson_n
     return new Date(dateString).toLocaleDateString([], options);
   };
 
+  const [voteUp, setVoteUp] = useState(0);
+  const [voteDown, setVoteDown] = useState(0);
+
   return (
     <ShortPostcardWrapper key={id}>
       <ShortFirstLineWrapper>
@@ -33,10 +37,14 @@ export const ShortPostcard: React.FC<Props> = ({ id, image, text, date, lesson_n
       </ShortFirstLineWrapper>
       <ShortSecondLineWrapper> 
         <ShortLikeDiv>
-          <ShortActionImageWrapper alt='like' src={require('../../images/like-svgrepo-com.svg').default} />
-          <ShortActionCounter>{10}</ShortActionCounter>
-          <ShortActionImageWrapper alt='dislike' src={require('../../images/dislike-svgrepo-com.svg').default} />
-          <ShortActionCounter>{2}</ShortActionCounter>
+          <VoteButton type='button' onClick={() => setVoteUp(voteUp + 1)}>
+            <ShortActionImageWrapper alt='like' src={require('../../images/like-svgrepo-com.svg').default} />
+          </VoteButton>
+          <ShortActionCounter>{voteUp}</ShortActionCounter>
+          <VoteButton type='button' onClick={() => setVoteDown(voteDown + 1)}>
+            <ShortActionImageWrapper alt='dislike' src={require('../../images/dislike-svgrepo-com.svg').default} />
+          </VoteButton>
+          <ShortActionCounter>{voteDown}</ShortActionCounter>
         </ShortLikeDiv>
         <div>
         <ShortActionImageWrapper alt='bookmark' src={require('../../images/bookmark-svgrepo-com.svg').default} />
@@ -114,6 +122,11 @@ const ShortSecondLineWrapper = styled.div`
 const ShortLikeDiv = styled.div`
   display: flex;
   align-items: center;
+`;
+
+const VoteButton = styled.button`
+  border: none;
+  background-color: transparent;
 `;
 
 const ShortActionImageWrapper = styled.img`

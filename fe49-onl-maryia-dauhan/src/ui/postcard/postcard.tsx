@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import { useState } from 'react';
+import styled from 'styled-components';
 
 type Props = {
   id: string;
@@ -7,18 +8,29 @@ type Props = {
   date: string;
   lesson_num: number;
   title: string;
-  author: string
-}
+  author: string;
+};
 
-export const Postcard: React.FC<Props> = ({ id, image, text, date, lesson_num, title, author }) => {
+export const Postcard: React.FC<Props> = ({
+  id,
+  image,
+  text,
+  date,
+  lesson_num,
+  title,
+  author,
+}) => {
   const formatDate = (dateString: string) => {
-  const options: Intl.DateTimeFormatOptions = { 
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
+    const options: Intl.DateTimeFormatOptions = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    };
     return new Date(dateString).toLocaleDateString([], options);
   };
+
+  const [voteUp, setVoteUp] = useState(0);
+  const [voteDown, setVoteDown] = useState(0);
 
   return (
     <PostcardWrapper key={id}>
@@ -32,25 +44,43 @@ export const Postcard: React.FC<Props> = ({ id, image, text, date, lesson_num, t
           <ImageWrapper src={image} />
         </ImageParentDiv>
       </FirstLineDiv>
-      <SecondLineDiv> 
+      <SecondLineDiv>
         <LikeDiv>
-          <ActionImgWrapper alt='like' src={require('../../images/like-svgrepo-com.svg').default} />
-          <ActionCounter>{10}</ActionCounter>
-          <ActionImgWrapper alt='dislike' src={require('../../images/dislike-svgrepo-com.svg').default} />
-          <ActionCounter>{2}</ActionCounter>
+          <VoteButton type='button' onClick={() => setVoteUp(voteUp + 1)}>
+            <ActionImgWrapper
+              alt='like'
+              src={require('../../images/like-svgrepo-com.svg').default}
+            />
+          </VoteButton>
+          <ActionCounter>{voteUp}</ActionCounter>
+          <VoteButton type='button' onClick={() => setVoteDown(voteDown + 1)}>
+            <ActionImgWrapper
+              alt='dislike'
+              src={require('../../images/dislike-svgrepo-com.svg').default}
+            />
+          </VoteButton>
+          <ActionCounter>{voteDown}</ActionCounter>
         </LikeDiv>
         <div>
-        <ActionImgWrapper alt='bookmark' src={require('../../images/bookmark-svgrepo-com.svg').default} />
-        <ActionImgWrapper alt='dots' src={require('../../images/dots-horizontal-svgrepo-com.svg').default} />
+          <ActionImgWrapper
+            alt='bookmark'
+            src={require('../../images/bookmark-svgrepo-com.svg').default}
+          />
+          <ActionImgWrapper
+            alt='dots'
+            src={
+              require('../../images/dots-horizontal-svgrepo-com.svg').default
+            }
+          />
         </div>
       </SecondLineDiv>
     </PostcardWrapper>
-  )
-}
+  );
+};
 
 const PostcardWrapper = styled.div`
   padding: 20px;
-  background-color:	#E8E8E8;
+  background-color: #e8e8e8;
   max-width: 500px;
 
   &:after {
@@ -60,7 +90,7 @@ const PostcardWrapper = styled.div`
     margin: 34px auto;
     width: 98%;
     height: 2px;
-    background-color: lightgray; 
+    background-color: lightgray;
   }
 `;
 
@@ -72,7 +102,7 @@ const FirstLineDiv = styled.div`
 
 const CardInfoWrapper = styled.div`
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   margin-right: 10px;
 `;
 
@@ -87,14 +117,14 @@ const TitleWrapper = styled.h2`
   all: unset;
   font-size: 18px;
   font-weight: 700;
-  line-height: 30px;  
+  line-height: 30px;
   margin-bottom: 10px;
   width: 300px;
-`
+`;
 const TextWrapper = styled.p`
   all: unset;
-  font-size: 14px;  
-  line-height: 24px;  
+  font-size: 14px;
+  line-height: 24px;
   color: gray;
   max-width: 300px;
 `;
@@ -107,6 +137,11 @@ const ImageParentDiv = styled.div`
 const LikeDiv = styled.div`
   display: flex;
   align-items: center;
+`;
+
+const VoteButton = styled.button`
+  border: none;
+  background-color: transparent;
 `;
 
 const ImageWrapper = styled.img`

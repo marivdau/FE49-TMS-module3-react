@@ -13,40 +13,39 @@ import { Postcard } from './ui/postcard/postcard';
 import { ShortPostcard } from './ui/postcard/short-postcard';
 import { Header } from './features/header/header';
 
-
 function App() {
   const onClick = () => console.log('click');
-  return (      
+  return (
     <div>
       <Header />
-    
-      {/* <Postcard 
-        id='1' 
-        image='https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg'
-        text='Lorem ipsum lorem ipsum  ipsum loremipsum  ipsum lorem ipsum ipsumlorem ipsum  ipsumlorem ipsum  ipsum lorem ipsumipsum lorem ipsum  ipsum lorem ipsum  ipsum lorem ipsum' 
-        date='2023-12-01' 
-        lesson_num={4} 
-        title='My title lorem ipsum  ipsum loremipsum  ipsumlorem ipsum  ipsum loremipsum  ipsumlorem ipsum  ipsum loremipsum  ipsumlorem ipsum  ipsum loremipsum  ipsum'
-        author='Mary Jane' 
-      /> 
 
-      <ShortPostcard 
-        id='1' 
+      <Postcard
+        id='1'
         image='https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg'
-        text='Lorem ipsum lorem ipsum  ipsum loremipsum  ipsum lorem ipsum ipsumlorem ipsum  ipsumlorem ipsum  ipsum lorem ipsumipsum lorem ipsum  ipsum lorem ipsum  ipsum lorem ipsum' 
-        date='2023-12-01' 
-        lesson_num={4} 
+        text='Lorem ipsum lorem ipsum  ipsum loremipsum  ipsum lorem ipsum ipsumlorem ipsum  ipsumlorem ipsum  ipsum lorem ipsumipsum lorem ipsum  ipsum lorem ipsum  ipsum lorem ipsum'
+        date='2023-12-01'
+        lesson_num={4}
+        title='My title lorem ipsum  ipsum loremipsum  ipsumlorem ipsum  ipsum loremipsum  ipsumlorem ipsum  ipsum loremipsum  ipsumlorem ipsum  ipsum loremipsum  ipsum'
+        author='Mary Jane'
+      />
+
+      <ShortPostcard
+        id='1'
+        image='https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg'
+        text='Lorem ipsum lorem ipsum  ipsum loremipsum  ipsum lorem ipsum ipsumlorem ipsum  ipsumlorem ipsum  ipsum lorem ipsumipsum lorem ipsum  ipsum lorem ipsum  ipsum lorem ipsum'
+        date='2023-12-01'
+        lesson_num={4}
         title='My title lorem ipsum  ipsum loremipsum  ipsum lorem ipsum  ipsum loremipsum  ipsum'
         author='Mary Jane'
-      /> */}
-      
+      />
+
       {/* <Button variant='primary' onClick={onClick}>Primary Button</Button> */}
 
       {/* <Title>Hello h1</Title> */}
-      
+
       {/* <Initials firstName='Maryia' secondName='dauhan'></Initials> */}
       {/* <Username firstName='Maryia' secondName='dauhan'></Username> */}
-      
+
       {/* <Tabs>
         <Tab title="Lorem">Lorem ipsum</Tab>
         <Tab title="Hey">Hey mama</Tab>
@@ -56,7 +55,6 @@ function App() {
       {/* <Textarea labelText='Text'></Textarea>*/}
 
       {/* <Input labelText='Title' disabled={false} /> */}
-
     </div>
   );
 }
