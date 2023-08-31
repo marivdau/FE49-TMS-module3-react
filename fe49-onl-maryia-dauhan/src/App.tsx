@@ -12,6 +12,7 @@ import { Input } from './ui/input/input';
 import { Postcard } from './ui/postcard/postcard';
 import { ShortPostcard } from './ui/postcard/short-postcard';
 import { Header } from './features/header/header';
+import { Listposts } from './pages/list-of-posts';
 
 function App() {
   const onClick = () => console.log('click');
@@ -19,25 +20,7 @@ function App() {
     <div>
       <Header />
 
-      <Postcard
-        id='1'
-        image='https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg'
-        text='Lorem ipsum lorem ipsum  ipsum loremipsum  ipsum lorem ipsum ipsumlorem ipsum  ipsumlorem ipsum  ipsum lorem ipsumipsum lorem ipsum  ipsum lorem ipsum  ipsum lorem ipsum'
-        date='2023-12-01'
-        lesson_num={4}
-        title='My title lorem ipsum  ipsum loremipsum  ipsumlorem ipsum  ipsum loremipsum  ipsumlorem ipsum  ipsum loremipsum  ipsumlorem ipsum  ipsum loremipsum  ipsum'
-        author='Mary Jane'
-      />
-
-      <ShortPostcard
-        id='1'
-        image='https://t4.ftcdn.net/jpg/05/62/99/31/360_F_562993122_e7pGkeY8yMfXJcRmclsoIjtOoVDDgIlh.jpg'
-        text='Lorem ipsum lorem ipsum  ipsum loremipsum  ipsum lorem ipsum ipsumlorem ipsum  ipsumlorem ipsum  ipsum lorem ipsumipsum lorem ipsum  ipsum lorem ipsum  ipsum lorem ipsum'
-        date='2023-12-01'
-        lesson_num={4}
-        title='My title lorem ipsum  ipsum loremipsum  ipsum lorem ipsum  ipsum loremipsum  ipsum'
-        author='Mary Jane'
-      />
+      <Listposts />
 
       {/* <Button variant='primary' onClick={onClick}>Primary Button</Button> */}
 

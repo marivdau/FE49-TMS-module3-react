@@ -11,7 +11,7 @@ type Props = {
   author: string;
 };
 
-export const Postcard: React.FC<Props> = ({
+export const MediumPostcard: React.FC<Props> = ({
   id,
   image,
   text,
@@ -33,55 +33,53 @@ export const Postcard: React.FC<Props> = ({
   const [voteDown, setVoteDown] = useState(0);
 
   return (
-    <PostcardWrapper key={id}>
-      <FirstLineDiv>
-        <CardInfo>
-          <DateDiv>{formatDate(date)}</DateDiv>
-          <Title>{title}</Title>
-          <Text>{text}</Text>
-        </CardInfo>
-        <ImageParentDiv>
+    <MediumPostcardWrapper key={id}>
+      <MediumFirstLine>
+        <MediumImageParentDiv>
           <Image src={image} />
-        </ImageParentDiv>
-      </FirstLineDiv>
-      <SecondLineDiv>
-        <LikeDiv>
+        </MediumImageParentDiv>
+        <MediumCardFirstLine>
+          <MediumDate>{formatDate(date)}</MediumDate>
+          <MediumTitle>{title}</MediumTitle>
+        </MediumCardFirstLine>
+      </MediumFirstLine>
+      <MediumSecondLine>
+        <MediumLikeDiv>
           <VoteButton type='button' onClick={() => setVoteUp(voteUp + 1)}>
-            <ActionImg
+            <MediumActionImage
               alt='like'
               src={require('../../images/like-svgrepo-com.svg').default}
             />
           </VoteButton>
-          <ActionCounter>{voteUp}</ActionCounter>
+          <MediumActionCounter>{voteUp}</MediumActionCounter>
           <VoteButton type='button' onClick={() => setVoteDown(voteDown + 1)}>
-            <ActionImg
+            <MediumActionImage
               alt='dislike'
               src={require('../../images/dislike-svgrepo-com.svg').default}
             />
           </VoteButton>
-          <ActionCounter>{voteDown}</ActionCounter>
-        </LikeDiv>
+          <MediumActionCounter>{voteDown}</MediumActionCounter>
+        </MediumLikeDiv>
         <div>
-          <ActionImg
+          <MediumActionImage
             alt='bookmark'
             src={require('../../images/bookmark-svgrepo-com.svg').default}
           />
-          <ActionImg
+          <MediumActionImage
             alt='dots'
             src={
               require('../../images/dots-horizontal-svgrepo-com.svg').default
             }
           />
         </div>
-      </SecondLineDiv>
-    </PostcardWrapper>
+      </MediumSecondLine>
+    </MediumPostcardWrapper>
   );
 };
 
-const PostcardWrapper = styled.div`
-  padding: 20px;
+const MediumPostcardWrapper = styled.div`
+  padding: 10px;
   background-color: #e8e8e8;
-  max-width: 1300px;
 
   &:after {
     content: '';
@@ -94,47 +92,56 @@ const PostcardWrapper = styled.div`
   }
 `;
 
-const FirstLineDiv = styled.div`
+const MediumFirstLine = styled.div`
   display: flex;
+  flex-direction: column;
   margin: auto;
   margin-bottom: 20px;
 `;
 
-const CardInfo = styled.div`
+const MediumCardFirstLine = styled.div`
   display: flex;
   flex-direction: column;
   margin-right: 10px;
+  justify-content: space-between;
+  width: 80%;
 `;
 
-const DateDiv = styled.span`
+const MediumDate = styled.span`
   all: unset;
   font-size: 14px;
   color: gray;
   margin-bottom: 10px;
 `;
 
-const Title = styled.h2`
+const MediumTitle = styled.h2`
   all: unset;
   font-size: 18px;
   font-weight: 700;
   line-height: 30px;
   margin-bottom: 10px;
-  width: 400px;
 `;
-const Text = styled.p`
-  all: unset;
-  font-size: 14px;
-  line-height: 24px;
-  color: gray;
-  max-width: 400px;
-`;
-
-const ImageParentDiv = styled.div`
+const MediumImageParentDiv = styled.div`
   width: 300px;
   height: 300px;
+  margin: 20px;
 `;
 
-const LikeDiv = styled.div`
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
+const MediumSecondLine = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+`;
+
+const MediumLikeDiv = styled.div`
   display: flex;
   align-items: center;
 `;
@@ -144,21 +151,7 @@ const VoteButton = styled.button`
   background-color: transparent;
 `;
 
-const Image = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;
-
-const SecondLineDiv = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  // max-width: 500px;
-  margin: auto;
-`;
-
-const ActionImg = styled.img`
+const MediumActionImage = styled.img`
   width: 20px;
   height: 20px;
   object-fit: cover;
@@ -166,7 +159,7 @@ const ActionImg = styled.img`
   cursor: pointer;
 `;
 
-const ActionCounter = styled.span`
+const MediumActionCounter = styled.span`
   margin-right: 10px;
   font-weight: 600;
 `;

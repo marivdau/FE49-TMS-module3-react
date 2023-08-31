@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styled from "styled-components";
+import styled from 'styled-components';
 
 type Props = {
   id: string;
@@ -8,16 +8,24 @@ type Props = {
   date: string;
   lesson_num: number;
   title: string;
-  author: string
-}
+  author: string;
+};
 
-export const ShortPostcard: React.FC<Props> = ({ id, image, text, date, lesson_num, title, author }) => {
+export const ShortPostcard: React.FC<Props> = ({
+  id,
+  image,
+  text,
+  date,
+  lesson_num,
+  title,
+  author,
+}) => {
   const formatDate = (dateString: string) => {
-  const options: Intl.DateTimeFormatOptions = { 
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
+    const options: Intl.DateTimeFormatOptions = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    };
     return new Date(dateString).toLocaleDateString([], options);
   };
 
@@ -26,39 +34,52 @@ export const ShortPostcard: React.FC<Props> = ({ id, image, text, date, lesson_n
 
   return (
     <ShortPostcardWrapper key={id}>
-      <ShortFirstLineWrapper>
+      <ShortFirstLine>
         <ShortCardFirstLine>
-          <ShortDateWrapper>{formatDate(date)}</ShortDateWrapper>
-          <ShortTitleWrapper>{title}</ShortTitleWrapper>
+          <ShortDate>{formatDate(date)}</ShortDate>
+          <ShortTitle>{title}</ShortTitle>
         </ShortCardFirstLine>
         <ShortImageParentDiv>
-          <ImageWrapper src={image} />
+          <Image src={image} />
         </ShortImageParentDiv>
-      </ShortFirstLineWrapper>
-      <ShortSecondLineWrapper> 
+      </ShortFirstLine>
+      <ShortSecondLine>
         <ShortLikeDiv>
           <VoteButton type='button' onClick={() => setVoteUp(voteUp + 1)}>
-            <ShortActionImageWrapper alt='like' src={require('../../images/like-svgrepo-com.svg').default} />
+            <ShortActionImage
+              alt='like'
+              src={require('../../images/like-svgrepo-com.svg').default}
+            />
           </VoteButton>
           <ShortActionCounter>{voteUp}</ShortActionCounter>
           <VoteButton type='button' onClick={() => setVoteDown(voteDown + 1)}>
-            <ShortActionImageWrapper alt='dislike' src={require('../../images/dislike-svgrepo-com.svg').default} />
+            <ShortActionImage
+              alt='dislike'
+              src={require('../../images/dislike-svgrepo-com.svg').default}
+            />
           </VoteButton>
           <ShortActionCounter>{voteDown}</ShortActionCounter>
         </ShortLikeDiv>
         <div>
-        <ShortActionImageWrapper alt='bookmark' src={require('../../images/bookmark-svgrepo-com.svg').default} />
-        <ShortActionImageWrapper alt='dots' src={require('../../images/dots-horizontal-svgrepo-com.svg').default} />
+          <ShortActionImage
+            alt='bookmark'
+            src={require('../../images/bookmark-svgrepo-com.svg').default}
+          />
+          <ShortActionImage
+            alt='dots'
+            src={
+              require('../../images/dots-horizontal-svgrepo-com.svg').default
+            }
+          />
         </div>
-      </ShortSecondLineWrapper>
+      </ShortSecondLine>
     </ShortPostcardWrapper>
-  )
-}
+  );
+};
 
 const ShortPostcardWrapper = styled.div`
-  padding: 20px;
-  background-color:	#E8E8E8;
-  max-width: 500px;
+  padding: 10px;
+  background-color: #e8e8e8;
 
   &:after {
     content: '';
@@ -67,11 +88,11 @@ const ShortPostcardWrapper = styled.div`
     margin: 34px auto;
     width: 98%;
     height: 2px;
-    background-color: lightgray; 
+    background-color: lightgray;
   }
 `;
 
-const ShortFirstLineWrapper = styled.div`
+const ShortFirstLine = styled.div`
   display: flex;
   margin: auto;
   margin-bottom: 20px;
@@ -79,38 +100,38 @@ const ShortFirstLineWrapper = styled.div`
 
 const ShortCardFirstLine = styled.div`
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   margin-right: 10px;
   justify-content: space-between;
   width: 80%;
 `;
 
-const ShortDateWrapper = styled.span`
+const ShortDate = styled.span`
   all: unset;
   font-size: 14px;
   color: gray;
   margin-bottom: 10px;
 `;
 
-const ShortTitleWrapper = styled.h2`
+const ShortTitle = styled.h2`
   all: unset;
   font-size: 18px;
   font-weight: 700;
-  line-height: 30px;  
+  line-height: 30px;
   margin-bottom: 10px;
-`
+`;
 const ShortImageParentDiv = styled.div`
   width: 80px;
   height: 80px;
 `;
 
-const ImageWrapper = styled.img`
+const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
 `;
 
-const ShortSecondLineWrapper = styled.div`
+const ShortSecondLine = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -129,7 +150,7 @@ const VoteButton = styled.button`
   background-color: transparent;
 `;
 
-const ShortActionImageWrapper = styled.img`
+const ShortActionImage = styled.img`
   width: 20px;
   height: 20px;
   object-fit: cover;
