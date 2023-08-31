@@ -81,7 +81,6 @@ export const Postcard: React.FC<Props> = ({
 const PostcardWrapper = styled.div`
   padding: 20px;
   background-color: #e8e8e8;
-  max-width: 1300px;
 
   &:after {
     content: '';
@@ -104,6 +103,7 @@ const CardInfo = styled.div`
   display: flex;
   flex-direction: column;
   margin-right: 10px;
+  max-width: 700px;
 `;
 
 const DateDiv = styled.span`
@@ -119,19 +119,21 @@ const Title = styled.h2`
   font-weight: 700;
   line-height: 30px;
   margin-bottom: 10px;
-  width: 400px;
+  max-width: 700px;
 `;
+
 const Text = styled.p`
   all: unset;
   font-size: 14px;
   line-height: 24px;
   color: gray;
-  max-width: 400px;
+  max-width: 800px;
 `;
 
 const ImageParentDiv = styled.div`
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height: 350px;
+  margin-right: 10px;
 `;
 
 const LikeDiv = styled.div`
@@ -154,7 +156,6 @@ const SecondLineDiv = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  // max-width: 500px;
   margin: auto;
 `;
 
