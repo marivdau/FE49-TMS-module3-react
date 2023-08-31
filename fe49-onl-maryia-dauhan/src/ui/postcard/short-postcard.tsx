@@ -78,14 +78,14 @@ export const ShortPostcard: React.FC<Props> = ({
 };
 
 const ShortPostcardWrapper = styled.div`
-  padding: 10px;
+  padding: 20px;
   background-color: #e8e8e8;
 
   &:after {
     content: '';
     display: block;
     margin: auto;
-    margin: 34px auto;
+    margin: 10px auto;
     width: 98%;
     height: 2px;
     background-color: lightgray;
@@ -120,6 +120,7 @@ const ShortTitle = styled.h2`
   line-height: 30px;
   margin-bottom: 10px;
 `;
+
 const ShortImageParentDiv = styled.div`
   width: 80px;
   height: 80px;
@@ -136,7 +137,6 @@ const ShortSecondLine = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  max-width: 500px;
   margin: auto;
 `;
 
