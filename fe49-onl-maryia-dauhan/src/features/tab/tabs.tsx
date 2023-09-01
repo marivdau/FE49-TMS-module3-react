@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 import { TabTitle } from "./tab-title";
 import { ReactElement, useState } from "react";
 
@@ -13,12 +12,12 @@ export const Tabs: React.FC<Props> = ({ children }) => {
     <div>
       <TabsWrapper>
         {children.map((item, index) => 
-        <TabTitle 
-          key={index}  
-          title={item.props.title} 
-          index={index} 
-          setSelectedTab={setSelectedTab} 
-        ></TabTitle>
+          <TabTitle 
+            key={index}  
+            title={item.props.title} 
+            index={index} 
+            setSelectedTab={setSelectedTab} 
+          ></TabTitle>
         )}
       </TabsWrapper>
       {children[selectedTab]}
