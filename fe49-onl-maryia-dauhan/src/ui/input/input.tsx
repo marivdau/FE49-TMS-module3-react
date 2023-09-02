@@ -49,18 +49,18 @@ const InputWrapper = styled.input<{ $borderColor?: string }>`
   width: 100%;
   padding: 10px;
 
-  &:focus-visible {
+  &:focus {
     border: 3px solid ${({ $borderColor }) => $borderColor || 'gray'};
   }
 
   &:active {
-    border: 3px solid ${({ $borderColor }) => $borderColor || 'gray'};
+    border: 3px solid ${({ $borderColor }) => $borderColor || 'transparent'};
   }
 
   &:disabled {
     cursor: none;
     opacity: 0.67;
-    background: silver;
+    background: lightgray;
     color: gray;
   }
 `;
@@ -68,5 +68,6 @@ const InputWrapper = styled.input<{ $borderColor?: string }>`
 const Error = styled.div`
   height: 20px;
   color: red;
+  font-size: 18px;
   line-height: 30px;
 `;

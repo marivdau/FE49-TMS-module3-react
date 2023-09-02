@@ -115,7 +115,7 @@ const TabButton = styled.button`
   &:disabled {
     cursor: none;
     opacity: 0.67;
-    color: lightgray;
+    color: gray;
   }
 
   &.active {

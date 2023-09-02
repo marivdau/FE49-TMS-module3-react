@@ -23,7 +23,6 @@ const TextAreaLabel = styled.label`
   display: flex;
   flex-direction: column;
   max-width: 70%;
-  margin: 0 20px;
 `;
 
 const TextAreaLabelText = styled.div`
