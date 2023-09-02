@@ -1,4 +1,3 @@
-import { ReactElement } from 'react';
 import styled from 'styled-components';
 import { Postcard } from '../ui/postcard/postcard';
 import { MediumPostcard } from '../ui/postcard/medium-postcards';

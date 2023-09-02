@@ -1,53 +1,62 @@
-import { useState } from "react";
-import styled from "styled-components";
+import { useState } from 'react';
+import styled from 'styled-components';
 
-type Props = { 
+type Props = {
   items: Array<{
     id: string;
     title: string;
-  }>   
-  onClick: () => void; 
+  }>;
+  onClick: () => void;
 };
 
 export const Hamburger: React.FC<Props> = ({ items, onClick }) => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
   const toggleHamburger = () => {
-    setHamburgerOpen(!hamburgerOpen)
-  }
+    setHamburgerOpen(!hamburgerOpen);
+  };
 
-  return (  
-    <div>      
+  return (
+    <div>
       <Humburger onClick={toggleHamburger}>
-        <Burger className="burger1" style={{transform: hamburgerOpen ? 'rotate(45deg)' : 'rotate(0)'}}></Burger>
-        <Burger className="burger2" style={{transform: hamburgerOpen ? 'rotate(-45deg)' : 'rotate(0)'}}></Burger>
+        <Burger
+          className='burger1'
+          style={{ transform: hamburgerOpen ? 'rotate(45deg)' : 'rotate(0)' }}
+        ></Burger>
+        <Burger
+          className='burger2'
+          style={{ transform: hamburgerOpen ? 'rotate(-45deg)' : 'rotate(0)' }}
+        ></Burger>
       </Humburger>
-     
-      <ListWrapper style={{display: hamburgerOpen ? 'block' : 'none'}}>
-        {items.map(({id, title}) => <ListLineWrapper key={id}>{title}</ListLineWrapper>)}
+
+      <ListWrapper style={{ display: hamburgerOpen ? 'block' : 'none' }}>
+        {items.map(({ id, title }) => (
+          <ListLineWrapper key={id}>{title}</ListLineWrapper>
+        ))}
       </ListWrapper>
     </div>
-  )
+  );
 };
 
 const ListWrapper = styled.ul`
   all: unset;
   position: fixed;
   top: 70px;
-  left: 20px;
+  left: 0;
   z-index: 30;
   width: 250px;
   height: 100px;
-  border-radius: 5%;
-  background-color: lightblue;
-`
+  border-radius: 0;
+  background-color: #283ca4;
+`;
 
 const ListLineWrapper = styled.li`
   all: unset;
   display: flex;
   flex-direction: column;
   margin: 10px 20px;
-  background-color: lightblue;
+  background-color: #283ca4;
+  color: white;
 `;
 
 const Humburger = styled.div`
@@ -63,7 +72,7 @@ const Burger = styled.div`
   width: 2rem;
   height: 0.25rem;
   border-radius: 10px;
-  background-color: #4755a2;
-  transform-origin: 1px;
+  background-color: white;
+  transform-origin: 4px;
   transition: all 0.3s linear;
 `;

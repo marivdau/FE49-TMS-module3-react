@@ -1,56 +1,52 @@
-import React, { useState } from 'react';
 import './App.css';
 import { Button } from './ui/button/button';
 import { Title } from './ui/title/title';
-import { Initials } from './ui/user/initials/initials';
-import { Username } from './ui/user/username/username';
-import { Hamburger } from './features/hamburger/hamburger';
-import { Tabs } from './features/tab/tabs';
-import { Tab } from './features/tab/tab';
-import { Textarea } from './ui/textarea/textarea';
-import { Input } from './ui/input/input';
-import { Postcard } from './ui/postcard/postcard';
-import { ShortPostcard } from './ui/postcard/short-postcard';
 import { Header } from './features/header/header';
-import { Listposts } from './pages/list-of-posts';
-import { TabPanel } from './features/tab/tab-lesson-example';
+import { TabDefault } from './features/tab/tabs';
 
 function App() {
-  const onClick = () => console.log('click');
-  const tabItems = [{id: '1', title: 'ye'}];
-  const [activeTabIndex, setActiveTabIndex] = useState(tabItems[0].id);
+  const onClick = () => console.log('Button clicked!');
+
   return (
     <div>
       <Header />
 
-      {/* <TabPanel
-        items={[
-          { id:'1', title: 'title1' },
-          { id:'2', title: 'title2' },
-          { id:'3', title: 'title3' },
-        ]}
-        activeId={activeTabIndex}
-        onTabClick={setActiveTabIndex}
-      /> */}
+      <Title>Lesson task #37 and Hometask #37</Title>
 
-      <Listposts />
+      <Title>Sign In</Title>
 
-      {/* <Button variant='primary' onClick={onClick}>Primary Button</Button> */}
+      <TabDefault></TabDefault>
 
-      {/* <Title>Hello h1</Title> */}
+      <Button variant='primary' onClick={onClick}>
+        Primary Button
+      </Button>
 
-      {/* <Initials firstName='Maryia' secondName='dauhan'></Initials> */}
-      {/* <Username firstName='Maryia' secondName='dauhan'></Username> */}
+      <Button variant='primary' onClick={onClick} disabled={true}>
+        Primary Button Disabled
+      </Button>
 
-      {/* <Tabs>
-        <Tab title="Lorem">Lorem ipsum</Tab>
-        <Tab title="Hey">Hey mama</Tab>
-        <Tab title="Cat">Cat has fur</Tab>
-      </Tabs> */}
+      <Button variant='secondary' onClick={onClick}>
+        Secondary Button
+      </Button>
+
+      <Button variant='secondary' onClick={onClick} disabled={true}>
+      Secondary Button Disabled
+      </Button>
+
+      <Button variant='secondary2' onClick={onClick}>
+      Secondary 2 Button
+      </Button>
+
+      <Button variant='secondary2' onClick={onClick} disabled={true}>
+      Secondary 2 Button Disabled
+      </Button>
+
+
+      <Title>Lesson task #38 and Hometask #38 - in progress...</Title>
+
+      {/* <Listposts /> */}
 
       {/* <Textarea labelText='Text'></Textarea>*/}
-
-      {/* <Input labelText='Title' disabled={false} /> */}
     </div>
   );
 }

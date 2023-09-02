@@ -15,7 +15,7 @@ export const Button: React.FC<Props> = ({
 }) => {
   return (
     <ButtonWrapper
-      type="button"
+      type='button'
       $variant={variant}
       disabled={disabled}
       onClick={() => onClick()}
@@ -27,7 +27,9 @@ export const Button: React.FC<Props> = ({
 
 const css = String.raw;
 
-const ButtonWrapper = styled.button<{ $variant: 'primary' | 'secondary' | 'secondary2' }>`
+const ButtonWrapper = styled.button<{
+  $variant: 'primary' | 'secondary' | 'secondary2';
+}>`
   all: unset;
   cursor: pointer;
   border-radius: 4px;
@@ -37,66 +39,66 @@ const ButtonWrapper = styled.button<{ $variant: 'primary' | 'secondary' | 'secon
     switch ($variant) {
       case 'primary': {
         return css`
-        border: 1px solid rgba(0,0,255,1);
-        padding: 5px 10px;
-        background: rgba(0,0,255,1);
-        color: white;
-        font-weight: 600;
+          border: 1px solid rgba(0, 0, 255, 1);
+          padding: 5px 10px;
+          background: rgba(0, 0, 255, 1);
+          color: white;
+          font-weight: 600;
 
-        &:active {
-          opacity: 0.33;;
-        }
+          &:active {
+            opacity: 0.33;
+          }
 
-        &:disabled {
-          cursor: none;
-          opacity: 0.67;
-          background: silver;
-          color: gray;
-        }
+          &:disabled {
+            cursor: none;
+            opacity: 0.67;
+            background: silver;
+            color: gray;
+          }
         `;
       }
       case 'secondary': {
         return css`
-        border: 1px solid white;
-        padding: 5px 10px;
-        background: rgba(0,0,255,1);
-        color: white;
-        font-weight: 600;
+          border: 1px solid white;
+          padding: 5px 10px;
+          background: rgba(0, 0, 255, 1);
+          color: white;
+          font-weight: 600;
 
-        background: rgb(169,169,169,.8);
-        color: black;
-        font-weight: 600;
-      
-        &:active {
-          background: rgb(169,169,169,1);
-        }
-      
-        &:disabled {
-          cursor: none;
-          opacity: 0.67;
-          background: silver;
-          color: gray;
-        }
+          background: rgb(169, 169, 169, 0.8);
+          color: black;
+          font-weight: 600;
+
+          &:active {
+            background: rgb(169, 169, 169, 1);
+          }
+
+          &:disabled {
+            cursor: none;
+            opacity: 0.67;
+            background: silver;
+            color: gray;
+          }
         `;
       }
       case 'secondary2': {
         return css`
-        border: 1px solid transparent;
-        background: none;
-        color: red;
-        font-weight: 600;
-      
-        &:active {
-          border: 1px solid rgb(169,169,169,.8);
-        }
-      
-        &:disabled {
-          cursor: none;
-          opacity: 0.67;
-          border: 1px solid transparent;  
+          border: 1px solid transparent;
           background: none;
-          color: gray;
-        }
+          color: red;
+          font-weight: 600;
+
+          &:active {
+            border: 1px solid rgb(169, 169, 169, 0.8);
+          }
+
+          &:disabled {
+            cursor: none;
+            opacity: 0.67;
+            border: 1px solid transparent;
+            background: none;
+            color: gray;
+          }
         `;
       }
       default:

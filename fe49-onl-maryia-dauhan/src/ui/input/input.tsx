@@ -6,11 +6,24 @@ type Props = React.InputHTMLAttributes<HTMLInputElement> & {
   disabled?: boolean;
 };
 
-export const Input: React.FC<Props> = ({ labelText, disabled, error, ...restProps }) => {
+export const Input: React.FC<Props> = ({
+  labelText,
+  disabled,
+  error,
+  ...restProps
+}) => {
   return (
     <Label>
       <LabelText>{labelText}</LabelText>
-      <InputWrapper type="text" name="name" disabled={disabled} placeholder='Placeholder' maxLength={100} $borderColor={error ? 'red' : undefined} {...restProps} />
+      <InputWrapper
+        type='text'
+        name='name'
+        disabled={disabled}
+        placeholder='Placeholder'
+        maxLength={100}
+        $borderColor={error ? 'red' : undefined}
+        {...restProps}
+      />
       <Error>{error}</Error>
     </Label>
   );

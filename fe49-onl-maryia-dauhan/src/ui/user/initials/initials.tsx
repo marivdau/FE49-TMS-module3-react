@@ -1,19 +1,17 @@
-import styled from 'styled-components'; 
+import styled from 'styled-components';
 
-type Props = { 
-  firstName: string;  
-  secondName: string; 
+type Props = {
+  firstName: string;
+  secondName: string;
 };
 
 export const Initials: React.FC<Props> = ({ firstName, secondName }) => {
   const userName: Array<string> = [firstName, secondName];
-  const initialsLetters: string = userName.map(item => item.charAt(0).toUpperCase()).join('');
+  const initialsLetters: string = userName
+    .map((item) => item.charAt(0).toUpperCase())
+    .join('');
 
-  return (    
-  <InitialsWrapper>
-    {initialsLetters}
-  </InitialsWrapper>
-  )
+  return <InitialsWrapper>{initialsLetters}</InitialsWrapper>;
 };
 
 const InitialsWrapper = styled.span`
@@ -25,5 +23,5 @@ const InitialsWrapper = styled.span`
   margin-right: 10px;
   font-weight: 300;
   font-size: 24px;
-  border-radius: 5px  
+  border-radius: 5px;
 `;

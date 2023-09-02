@@ -1,17 +1,22 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 type Props = React.InputHTMLAttributes<HTMLInputElement> & {
   labelText: string;
-}
+};
 
 export const Textarea: React.FC<Props> = ({ labelText }) => {
   return (
     <TextAreaLabel>
       <TextAreaLabelText>{labelText}</TextAreaLabelText>
-      <TextAreaWrapper placeholder="Add your text" rows={4} cols={40} maxLength={1000}/>
+      <TextAreaWrapper
+        placeholder='Add your text'
+        rows={4}
+        cols={40}
+        maxLength={1000}
+      />
     </TextAreaLabel>
-  )
-}
+  );
+};
 
 const TextAreaLabel = styled.label`
   all: unset;
