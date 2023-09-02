@@ -28,11 +28,11 @@ export const Header = () => {
           type='text'
           placeholder='Search...'
           maxLength={100}
-          style={{ visibility: !hamburgerOpen ? 'hidden' : 'visible' }}
+          style={{ visibility: !hamburgerOpen ? 'visible' : 'hidden' }}
         />
         <CloseButton
           type='button'
-          style={{ visibility: !hamburgerOpen ? 'hidden' : 'visible' }}
+          style={{ visibility: !hamburgerOpen ? 'visible' : 'hidden' }}
         >
           <CloseImage
             alt='close'
