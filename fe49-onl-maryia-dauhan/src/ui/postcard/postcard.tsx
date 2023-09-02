@@ -103,7 +103,7 @@ const CardInfo = styled.div`
   display: flex;
   flex-direction: column;
   margin-right: 10px;
-  max-width: 700px;
+  max-width: 600px;
 `;
 
 const DateDiv = styled.span`
