@@ -2,13 +2,13 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 type Props = {
-  id: string;
+  id: number;
   image?: string;
   text: string;
   date: string;
   lesson_num: number;
   title: string;
-  author: string;
+  author: number;
 };
 
 export const ShortPostcard: React.FC<Props> = ({

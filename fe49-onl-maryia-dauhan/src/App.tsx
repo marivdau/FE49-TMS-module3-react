@@ -5,6 +5,7 @@ import { Header } from './features/header/header';
 import { TabDefault } from './features/tab/tabs';
 import { Input } from './ui/input/input';
 import { Textarea } from './ui/textarea/textarea';
+import { Listposts } from './pages/list-of-posts';
 
 function App() {
   const onClick = () => console.log('Button clicked!');
@@ -33,15 +34,15 @@ function App() {
         </Button>
 
         <Button variant='secondary' onClick={onClick} disabled={true}>
-        Secondary Button Disabled
+          Secondary Button Disabled
         </Button>
 
         <Button variant='secondary2' onClick={onClick}>
-        Secondary 2 Button
+         Secondary 2 Button
         </Button>
 
         <Button variant='secondary2' onClick={onClick} disabled={true}>
-        Secondary 2 Button Disabled
+          Secondary 2 Button Disabled
         </Button>
       </div>
  
@@ -59,11 +60,8 @@ function App() {
         <Textarea labelText='Textarea' />
       </div>
 
-      
+      <Listposts />      
 
-      {/* <Listposts /> */}
-
-      {/* <Textarea labelText='Text'></Textarea>*/}
     </div>
   );
 }
