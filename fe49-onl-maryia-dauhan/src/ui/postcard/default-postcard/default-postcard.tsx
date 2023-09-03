@@ -49,14 +49,14 @@ export const Postcard: React.FC<Props> = ({
           <VoteButton type='button' onClick={() => setVoteUp(voteUp + 1)}>
             <ActionImg
               alt='like'
-              src={require('../../images/like-svgrepo-com.svg').default}
+              src={require('../../../images/like-svgrepo-com.svg').default}
             />
           </VoteButton>
           <ActionCounter>{voteUp}</ActionCounter>
           <VoteButton type='button' onClick={() => setVoteDown(voteDown + 1)}>
             <ActionImg
               alt='dislike'
-              src={require('../../images/dislike-svgrepo-com.svg').default}
+              src={require('../../../images/dislike-svgrepo-com.svg').default}
             />
           </VoteButton>
           <ActionCounter>{voteDown}</ActionCounter>
@@ -64,12 +64,12 @@ export const Postcard: React.FC<Props> = ({
         <div>
           <ActionImg
             alt='bookmark'
-            src={require('../../images/bookmark-svgrepo-com.svg').default}
+            src={require('../../../images/bookmark-svgrepo-com.svg').default}
           />
           <ActionImg
             alt='dots'
             src={
-              require('../../images/dots-horizontal-svgrepo-com.svg').default
+              require('../../../images/dots-horizontal-svgrepo-com.svg').default
             }
           />
         </div>
@@ -79,8 +79,8 @@ export const Postcard: React.FC<Props> = ({
 };
 
 const PostcardWrapper = styled.div`
-  padding: 20px;
   background-color: #e8e8e8;
+  width: 100%;
 
   &:after {
     content: '';
@@ -95,45 +95,50 @@ const PostcardWrapper = styled.div`
 
 const FirstLineDiv = styled.div`
   display: flex;
-  margin: auto;
-  margin-bottom: 20px;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 20px;
 `;
 
 const CardInfo = styled.div`
   display: flex;
   flex-direction: column;
-  margin-right: 10px;
-  max-width: 600px;
+  max-width: 60%;
 `;
 
 const DateDiv = styled.span`
   all: unset;
-  font-size: 14px;
+  font-size: 18px;
   color: gray;
   margin-bottom: 10px;
 `;
 
 const Title = styled.h2`
   all: unset;
-  font-size: 18px;
+  font-size: 36px;
   font-weight: 700;
-  line-height: 30px;
+  line-height: 48px;
   margin-bottom: 10px;
-  max-width: 700px;
+  max-width: 100%;
 `;
 
 const Text = styled.p`
   all: unset;
-  font-size: 14px;
-  line-height: 24px;
+  font-size: 18px;
+  line-height: 32px;
   color: gray;
-  max-width: 800px;
+  max-width: 100%;
 `;
 
 const ImageParentDiv = styled.div`
-  width: 350px;
-  height: 350px;
-  margin-right: 10px;
+  width: 400px;
+  height: 400px;
+`;
+
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 const LikeDiv = styled.div`
@@ -146,17 +151,11 @@ const VoteButton = styled.button`
   background-color: transparent;
 `;
 
-const Image = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;
-
 const SecondLineDiv = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: auto;
+  margin: 20px;
 `;
 
 const ActionImg = styled.img`

@@ -11,7 +11,7 @@ type Props = {
   author: number;
 };
 
-export const MediumPostcard: React.FC<Props> = ({
+export const ShortPostcard: React.FC<Props> = ({
   id,
   image,
   text,
@@ -33,73 +33,73 @@ export const MediumPostcard: React.FC<Props> = ({
   const [voteDown, setVoteDown] = useState(0);
 
   return (
-    <MediumPostcardWrapper key={id}>
-      <MediumFirstLine>
-        <MediumImageParentDiv>
+    <ShortPostcardWrapper key={id}>
+      <ShortFirstLine>
+        <ShortCardFirstLine>
+          <ShortDate>{formatDate(date)}</ShortDate>
+          <ShortTitle>{title}</ShortTitle>
+        </ShortCardFirstLine>
+        <ShortImageParentDiv>
           <Image src={image} />
-        </MediumImageParentDiv>
-        <MediumCardFirstLine>
-          <MediumDate>{formatDate(date)}</MediumDate>
-          <MediumTitle>{title}</MediumTitle>
-        </MediumCardFirstLine>
-      </MediumFirstLine>
-      <MediumSecondLine>
-        <MediumLikeDiv>
+        </ShortImageParentDiv>
+      </ShortFirstLine>
+      <ShortSecondLine>
+        <ShortLikeDiv>
           <VoteButton type='button' onClick={() => setVoteUp(voteUp + 1)}>
-            <MediumActionImage
+            <ShortActionImage
               alt='like'
-              src={require('../../images/like-svgrepo-com.svg').default}
+              src={require('../../../images/like-svgrepo-com.svg').default}
             />
           </VoteButton>
-          <MediumActionCounter>{voteUp}</MediumActionCounter>
+          <ShortActionCounter>{voteUp}</ShortActionCounter>
           <VoteButton type='button' onClick={() => setVoteDown(voteDown + 1)}>
-            <MediumActionImage
+            <ShortActionImage
               alt='dislike'
-              src={require('../../images/dislike-svgrepo-com.svg').default}
+              src={require('../../../images/dislike-svgrepo-com.svg').default}
             />
           </VoteButton>
-          <MediumActionCounter>{voteDown}</MediumActionCounter>
-        </MediumLikeDiv>
+          <ShortActionCounter>{voteDown}</ShortActionCounter>
+        </ShortLikeDiv>
         <div>
-          <MediumActionImage
+          <ShortActionImage
             alt='bookmark'
-            src={require('../../images/bookmark-svgrepo-com.svg').default}
+            src={require('../../../images/bookmark-svgrepo-com.svg').default}
           />
-          <MediumActionImage
+          <ShortActionImage
             alt='dots'
             src={
-              require('../../images/dots-horizontal-svgrepo-com.svg').default
+              require('../../../images/dots-horizontal-svgrepo-com.svg').default
             }
           />
         </div>
-      </MediumSecondLine>
-    </MediumPostcardWrapper>
+      </ShortSecondLine>
+    </ShortPostcardWrapper>
   );
 };
 
-const MediumPostcardWrapper = styled.div`
-  padding: 10px;
+const ShortPostcardWrapper = styled.div`
+  padding: 20px;
   background-color: #e8e8e8;
 
   &:after {
     content: '';
     display: block;
     margin: auto;
-    margin: 34px auto;
+    margin: 10px auto;
     width: 98%;
     height: 2px;
     background-color: lightgray;
   }
 `;
 
-const MediumFirstLine = styled.div`
+const ShortFirstLine = styled.div`
   display: flex;
-  flex-direction: column;
   margin: auto;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 `;
 
-const MediumCardFirstLine = styled.div`
+const ShortCardFirstLine = styled.div`
   display: flex;
   flex-direction: column;
   margin-right: 10px;
@@ -107,24 +107,24 @@ const MediumCardFirstLine = styled.div`
   width: 80%;
 `;
 
-const MediumDate = styled.span`
+const ShortDate = styled.span`
   all: unset;
-  font-size: 14px;
+  font-size: 18px;
   color: gray;
   margin-bottom: 10px;
 `;
 
-const MediumTitle = styled.h2`
+const ShortTitle = styled.h2`
   all: unset;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 700;
-  line-height: 30px;
+  line-height: 36px;
   margin-bottom: 10px;
 `;
-const MediumImageParentDiv = styled.div`
-  width: 300px;
-  height: 300px;
-  margin: 20px;
+
+const ShortImageParentDiv = styled.div`
+  width: 100px;
+  height: 100px;
 `;
 
 const Image = styled.img`
@@ -133,15 +133,14 @@ const Image = styled.img`
   object-fit: cover;
 `;
 
-const MediumSecondLine = styled.div`
+const ShortSecondLine = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: auto;
 `;
 
-const MediumLikeDiv = styled.div`
+const ShortLikeDiv = styled.div`
   display: flex;
   align-items: center;
 `;
@@ -151,7 +150,7 @@ const VoteButton = styled.button`
   background-color: transparent;
 `;
 
-const MediumActionImage = styled.img`
+const ShortActionImage = styled.img`
   width: 20px;
   height: 20px;
   object-fit: cover;
@@ -159,7 +158,7 @@ const MediumActionImage = styled.img`
   cursor: pointer;
 `;
 
-const MediumActionCounter = styled.span`
+const ShortActionCounter = styled.span`
   margin-right: 10px;
   font-weight: 600;
 `;

@@ -46,7 +46,7 @@ function App() {
         </Button>
       </div>
  
-      <Title>Lesson task #38 and Hometask #38 - in progress...</Title>
+      <Title>Lesson task #38 and Hometask #38</Title>
 
       <div style={{margin: '50px'}}>
         <Input labelText='Default input' />
