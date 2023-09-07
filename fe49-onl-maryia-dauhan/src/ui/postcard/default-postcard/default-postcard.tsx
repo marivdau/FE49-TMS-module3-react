@@ -28,9 +28,12 @@ export const Postcard: React.FC<Props> = ({
     };
     return new Date(dateString).toLocaleDateString([], options);
   };
-
-  const [voteUp, setVoteUp] = useState(0);
-  const [voteDown, setVoteDown] = useState(0);
+  const amountUp = 10;
+  const amountDown = 2;
+  const [voteUp, setVoteUp] = useState(amountUp);
+  const [voteDown, setVoteDown] = useState(amountDown);
+  const [userVotedLike, setUserVotedLike] = useState(false);
+  const [userVotedDislike, setUserVotedDislike] = useState(false);
 
   return (
     <PostcardWrapper key={id}>
@@ -46,14 +49,36 @@ export const Postcard: React.FC<Props> = ({
       </FirstLineDiv>
       <SecondLineDiv>
         <LikeDiv>
-          <VoteButton type='button' onClick={() => setVoteUp(voteUp + 1)}>
+          <VoteButton
+            type='button'
+            onClick={() => {
+              setUserVotedLike(!userVotedLike);
+              if (!userVotedLike) {
+                setVoteUp(voteUp + 1);
+              } else {
+                setVoteUp(voteUp - 1);
+              }
+            }}
+            className={userVotedLike ? 'votedUp' : 'unvotedDwn'}
+          >
             <ActionImg
               alt='like'
               src={require('../../../images/like-svgrepo-com.svg').default}
             />
           </VoteButton>
           <ActionCounter>{voteUp}</ActionCounter>
-          <VoteButton type='button' onClick={() => setVoteDown(voteDown + 1)}>
+          <VoteButton
+            type='button'
+            onClick={() => {
+              setUserVotedDislike(!userVotedDislike);
+              if (!userVotedDislike) {
+                setVoteDown(voteDown + 1);
+              } else {                
+                setVoteDown(voteDown - 1);
+              }
+            }}
+            className={userVotedDislike ? 'disVotedUp' : 'disVotedDwn'}
+          >
             <ActionImg
               alt='dislike'
               src={require('../../../images/dislike-svgrepo-com.svg').default}
@@ -149,6 +174,22 @@ const LikeDiv = styled.div`
 const VoteButton = styled.button`
   border: none;
   background-color: transparent;
+
+  &.votedUp {
+    background-color: red;
+  }
+
+  &.unvotedDwn {
+    background-color: transparent;
+  }
+
+  &.disVotedUp {
+    background-color: aqua;
+  }
+
+  &.disVotedDwn {
+    background-color: transparent;
+  }
 `;
 
 const SecondLineDiv = styled.div`

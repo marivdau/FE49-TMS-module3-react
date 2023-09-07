@@ -17,7 +17,7 @@ export const Hamburger: React.FC<Props> = ({ items, onClick }) => {
   };
 
   return (
-    <div>
+    <HumburgerWrapper>
       <Humburger onClick={toggleHamburger}>
         <Burger
           className='burger1'
@@ -34,9 +34,13 @@ export const Hamburger: React.FC<Props> = ({ items, onClick }) => {
           <ListLineWrapper key={id}>{title}</ListLineWrapper>
         ))}
       </ListWrapper>
-    </div>
+    </HumburgerWrapper>
   );
 };
+
+const HumburgerWrapper = styled.div`
+  all: unset;
+`;
 
 const ListWrapper = styled.ul`
   all: unset;

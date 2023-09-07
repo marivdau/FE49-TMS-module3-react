@@ -14,7 +14,7 @@ function App() {
     <div>
       <Header />
 
-      <Title>Lesson task #37 and Hometask #37</Title>
+      <h2>Lesson task #37 and Hometask #37</h2>
 
       <Title>Sign In</Title>
 
@@ -46,7 +46,7 @@ function App() {
         </Button>
       </div>
  
-      <Title>Lesson task #38 and Hometask #38</Title>
+      <h2>Lesson task #38 and Hometask #38</h2>
 
       <div style={{margin: '50px'}}>
         <Input labelText='Default input' />

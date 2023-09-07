@@ -52,10 +52,9 @@ export const TabDefault = () => {
     <TabWrapper>
       <TabList>
         {tabs.map((tab, id) => (
-          <TabItem>
+          <TabItem key={id}>
             <TabButton
-              type='button'
-              key={id}
+              type='button'              
               onClick={() => handleTabClick(tab.id)}
               className={currentTab === id ? 'active' : 'inactive'}
               disabled={tab.disabled}
