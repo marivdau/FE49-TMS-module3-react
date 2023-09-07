@@ -174,9 +174,11 @@ const LikeDiv = styled.div`
 const VoteButton = styled.button`
   border: none;
   background-color: transparent;
+  margin-right: 5px;
 
   &.votedUp {
-    background-color: red;
+    background-color: lightgray;
+    border-radius: 10%;
   }
 
   &.unvotedDwn {
@@ -184,7 +186,8 @@ const VoteButton = styled.button`
   }
 
   &.disVotedUp {
-    background-color: aqua;
+    background-color: lightgray;
+    border-radius: 10%;
   }
 
   &.disVotedDwn {
