@@ -53,7 +53,11 @@ export const Postcard: React.FC<Props> = ({
             type='button'
             onClick={() => {
               setUserVotedLike(!userVotedLike);
-              if (!userVotedLike) {
+              if (!userVotedLike && userVotedDislike === true) {
+                setVoteUp(voteUp + 1);
+                setVoteDown(voteDown - 1);
+                setUserVotedDislike(!userVotedDislike);
+              } else if (!userVotedLike && userVotedDislike === false) {
                 setVoteUp(voteUp + 1);
               } else {
                 setVoteUp(voteUp - 1);
@@ -71,9 +75,13 @@ export const Postcard: React.FC<Props> = ({
             type='button'
             onClick={() => {
               setUserVotedDislike(!userVotedDislike);
-              if (!userVotedDislike) {
+              if (!userVotedDislike && userVotedLike === true) {
                 setVoteDown(voteDown + 1);
-              } else {                
+                setVoteUp(voteUp - 1);
+                setUserVotedLike(!userVotedLike);
+              } else if (!userVotedDislike && userVotedLike === false) {
+                setVoteDown(voteDown + 1);
+              } else {
                 setVoteDown(voteDown - 1);
               }
             }}
